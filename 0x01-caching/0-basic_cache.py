@@ -5,6 +5,7 @@ from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
+    """Basic caching system""""
     def put(self, key, item):
         if key and item:
             self.cache_data[key] = item
