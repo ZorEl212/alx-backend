@@ -9,13 +9,13 @@ class FIFOCache(BaseCaching):
 
     def __int__(self):
       """Init method"""
-        super().__init__()
-        self.cache_data = OrderedDict()
+      super().__init__()
+      self.cache_data = OrderedDict()
 
     def put(self, key, item):
       """Put a cache using fifo """
-        if key is None or item is None:
-            return
+      if key is None or item is None:
+        return
         if len(self.cache_data) >= super().MAX_ITEMS:
             if key not in self.cache_data.keys():
                 k = list(self.cache_data.keys())[0]
@@ -25,6 +25,6 @@ class FIFOCache(BaseCaching):
 
     def get(self, key):
       """Get a cache by key if it exists"""
-        if key is None or key not in self.cache_data.keys():
-            return None
-        return self.cache_data[key]
+      if key is None or key not in self.cache_data.keys():
+        return None
+      return self.cache_data[key]
